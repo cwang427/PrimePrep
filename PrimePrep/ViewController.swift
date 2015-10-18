@@ -150,11 +150,22 @@ class ViewController: UIViewController {
             if sentenceCounter != sentences.count {
                 reset()
                 setup()
+                let alert = UIAlertController(title: "BRUH", message: "NICE JOB! YOU GOT IT!", preferredStyle: .Alert)
+                
+                alert.addAction(UIAlertAction(title: "Next scramble", style: .Default, handler: {_ in}))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
             } else {
                 stopTimer()
             }
         } else {
             reset()
+            let alert = UIAlertController(title: "OOPS!", message: "Pls try again :D", preferredStyle: .Alert)
+            
+            alert.addAction(UIAlertAction(title: "Try Again", style: .Default, handler: {_ in}))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
 }
