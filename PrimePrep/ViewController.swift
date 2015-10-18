@@ -23,12 +23,17 @@ class ViewController: UIViewController {
     @IBAction func addWord(sender: UIButton) {
         if (display1.currentTitle! == " ") {
             display1.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+            sender.hidden = true
         } else if display2.currentTitle! == " " {
             display2.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+            sender.hidden = true
         } else if display3.currentTitle! == " " {
             display3.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+            sender.hidden = true
         } else if display4.currentTitle! == " " {
             display4.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+            sender.hidden = true
+            evaluateResult()
         }
     }
     
@@ -39,6 +44,12 @@ class ViewController: UIViewController {
 
     @IBAction func clearDisplay(sender: UIButton) {
         sender.setTitle(" ", forState: UIControlState.Normal)
+    }
+    
+    func evaluateResult() {
+        let holdingArray = [display1.currentTitle!, display2.currentTitle!,
+            display3.currentTitle!, display4.currentTitle!]
+        
     }
     
 }
