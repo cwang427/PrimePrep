@@ -11,19 +11,17 @@ import UIKit
 class ViewController: UIViewController {
 
     var sentences = [[String]]()
+    var score = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         sentences.append(["My", "Name", "Is", "Cassidy", "Bread"])
+        sentences.append(["My Name Is Cassidy"])
         input1.setTitle(sentences[0][0], forState: UIControlState.Normal)
         input2.setTitle(sentences[0][1], forState: UIControlState.Normal)
         input3.setTitle(sentences[0][2], forState: UIControlState.Normal)
         input4.setTitle(sentences[0][3], forState: UIControlState.Normal)
         input5.setTitle(sentences[0][4], forState: UIControlState.Normal)
-        input1.titleLabel?.adjustsFontSizeToFitWidth = true
-        input2.titleLabel?.adjustsFontSizeToFitWidth = true
-        input3.titleLabel?.adjustsFontSizeToFitWidth = true
-        input4.titleLabel?.adjustsFontSizeToFitWidth = true
-        input5.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +39,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var input4: UIButton!
     @IBOutlet weak var input5: UIButton!
     @IBOutlet weak var input6: UIButton!
-
+    @IBOutlet weak var scoreCounter: UILabel!
+    
+    //Set up view
+    func setup() {
+        input1.titleLabel?.adjustsFontSizeToFitWidth = true
+        input2.titleLabel?.adjustsFontSizeToFitWidth = true
+        input3.titleLabel?.adjustsFontSizeToFitWidth = true
+        input4.titleLabel?.adjustsFontSizeToFitWidth = true
+        input5.titleLabel?.adjustsFontSizeToFitWidth = true
+        scoreCounter.adjustsFontSizeToFitWidth = true
+        scoreCounter.text = "Score: \(score)"
+    }
+    
+    //Reset view
+    func reset() {
+        clearDisplay(display1)
+        clearDisplay(display2)
+        clearDisplay(display3)
+        clearDisplay(display4)
+    }
+    
+    //New sentence builder
+    func newScramble() {
+        
+    }
+ 
     //Update display upon pressing button. Check result once 4 fields are filled
     var hiddenButtons = Array<UIButton>()
     @IBAction func addWord(sender: UIButton) {
@@ -77,9 +100,15 @@ class ViewController: UIViewController {
 
     //Check if user input is the same as correct string
     func evaluateResult() {
-        let holdingArray = [display1.currentTitle!, display2.currentTitle!,
-            display3.currentTitle!, display4.currentTitle!]
-        print(holdingArray)
+        let userAnswer = display1.currentTitle! + " " + display2.currentTitle! + " "
+            + display3.currentTitle! + " " + display4.currentTitle!
+        if userAnswer == sentences[1][0] {
+            score += 1
+            scoreCounter.text = "Score: \(score)"
+            reset()
+        } else {
+            reset()
+        }
     }
 }
 
