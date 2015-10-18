@@ -70,11 +70,11 @@ class ViewController: UIViewController {
     
     func generateSentences() {
         sentences.append([["What", "A", "Wonderful", "Morning", "Hello", "George"], ["What A Wonderful Morning"]])
-        sentences.append([["Excellent", "Chocolate", "Chip", "Cookies", "Look", "Boots"], ["Excellent Chocolate Chip Cookies"]])
-        sentences.append([["Confident", "Claire", "Sings", "Songs", "Tea", "ToHellWithGeorgia"], ["Confident Claire Sings Songs"]])
-        sentences.append([["Brave", "Horses", "Run", "Quickly", "Oil", "Pride"], ["Brave Horses Run Quickly"]])
+        sentences.append([["Fearless", "Skydivers", "Jump", "First", "Chip", "Boots"], ["Fearless Skydivers Jump First"]])
+        sentences.append([["Claire", "Confidently", "Sings", "Songs", "Tea", "ToHellWithGeorgia"], ["Claire Confidently Sings Songs"]])
+        sentences.append([["Strong", "Leaders", "Act", "Decisively", "Oil", "Pride"], ["Strong Leaders Act Decisively"]])
         sentences.append([["Intelligent", "Robots", "Play", "Soccer", "Chocolate", "Mud"], ["Intelligent Robots Play Soccer"]])
-        sentences.append([["Fast", "Runners", "Are", "Victorious", "Above", "Eyebrows"], ["Fast Runners Are Victorious"]])
+        sentences.append([["Fastest", "Runner", "Wins", "Trophy", "Above", "Eyebrows"], ["Fastest Runner Wins Trophy"]])
         sentences.append([["Courageous", "Firefighters", "Save", "People", "Below", "Banana"], ["Courageous Firefighters Save People"]])
     }
     
