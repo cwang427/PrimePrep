@@ -116,6 +116,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-uj-IBZ">
+                                <rect key="frame" x="20" y="27" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -146,7 +153,9 @@
                             <constraint firstItem="i6H-60-BSi" firstAttribute="leading" secondItem="4ck-7Y-1jD" secondAttribute="trailing" constant="8" id="XjP-KH-Ycs"/>
                             <constraint firstItem="C1R-8v-Si1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="194" id="Yuh-RW-Iuf"/>
                             <constraint firstItem="0Vk-x4-Esq" firstAttribute="top" secondItem="3Zl-Gw-w3m" secondAttribute="bottom" constant="55" id="Ywd-a0-seN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PT5-uj-IBZ" secondAttribute="leading" id="ZUD-OC-xd1"/>
                             <constraint firstItem="c96-hR-xSN" firstAttribute="leading" secondItem="BHf-00-ynd" secondAttribute="trailing" constant="8" id="czO-a2-PqA"/>
+                            <constraint firstItem="PT5-uj-IBZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="g44-Ec-Z0s"/>
                             <constraint firstItem="4ck-7Y-1jD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="194" id="gGv-pp-N00"/>
                             <constraint firstItem="4ck-7Y-1jD" firstAttribute="height" secondItem="C1R-8v-Si1" secondAttribute="height" id="hRH-MJ-6Uz"/>
                             <constraint firstItem="R19-pr-W5Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="kyQ-tN-rJu"/>
@@ -173,6 +182,7 @@
                         <outlet property="input5" destination="BHf-00-ynd" id="ilW-1Z-fWb"/>
                         <outlet property="input6" destination="c96-hR-xSN" id="gAO-BU-a3F"/>
                         <outlet property="scoreCounter" destination="R19-pr-W5Q" id="n5B-jD-fG9"/>
+                        <outlet property="stopwatch" destination="PT5-uj-IBZ" id="GC2-ni-Cb5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

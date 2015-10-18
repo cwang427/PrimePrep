@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     var score = 0
     var sentenceCounter = 0
     
+    var timer: NSTimer?
+    var timerStartDate: NSDate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         generateSentences()
@@ -31,6 +34,20 @@ class ViewController: UIViewController {
         display2.titleLabel?.adjustsFontSizeToFitWidth = true
         display3.titleLabel?.adjustsFontSizeToFitWidth = true
         display4.titleLabel?.adjustsFontSizeToFitWidth = true
+        stopwatch.adjustsFontSizeToFitWidth = true
+        
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+        self.timerStartDate = NSDate()
+        
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+    }
+    
+    func timerTick() {
+        let now = NSDate()
+        stopwatch.text = "\(Double(round(1000 * now.timeIntervalSinceDate(timerStartDate))/1000))"
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +66,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var input5: UIButton!
     @IBOutlet weak var input6: UIButton!
     @IBOutlet weak var scoreCounter: UILabel!
+    @IBOutlet weak var stopwatch: UILabel!
     
     func generateSentences() {
         sentences.append([["What", "A", "Wonderful", "Morning", "Hello", "George"], ["What A Wonderful Morning"]])
@@ -132,6 +150,8 @@ class ViewController: UIViewController {
             if sentenceCounter != sentences.count {
                 reset()
                 setup()
+            } else {
+                stopTimer()
             }
         } else {
             reset()
