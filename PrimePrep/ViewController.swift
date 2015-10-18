@@ -10,18 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var sentences = [[String]]()
+    var sentences = [[[String]]]()
     var score = 0
+    var sentenceCounter = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateSentences()
+        shuffleSentences()
         setup()
-        sentences.append(["My", "Name", "Is", "Cassidy", "Bread"])
-        sentences.append(["My Name Is Cassidy"])
-        input1.setTitle(sentences[0][0], forState: UIControlState.Normal)
-        input2.setTitle(sentences[0][1], forState: UIControlState.Normal)
-        input3.setTitle(sentences[0][2], forState: UIControlState.Normal)
-        input4.setTitle(sentences[0][3], forState: UIControlState.Normal)
-        input5.setTitle(sentences[0][4], forState: UIControlState.Normal)
+        scoreCounter.adjustsFontSizeToFitWidth = true
+        scoreCounter.text = "Score: \(score)"
+        input1.titleLabel?.adjustsFontSizeToFitWidth = true
+        input2.titleLabel?.adjustsFontSizeToFitWidth = true
+        input3.titleLabel?.adjustsFontSizeToFitWidth = true
+        input4.titleLabel?.adjustsFontSizeToFitWidth = true
+        input5.titleLabel?.adjustsFontSizeToFitWidth = true
+        input6.titleLabel?.adjustsFontSizeToFitWidth = true
+        display1.titleLabel?.adjustsFontSizeToFitWidth = true
+        display2.titleLabel?.adjustsFontSizeToFitWidth = true
+        display3.titleLabel?.adjustsFontSizeToFitWidth = true
+        display4.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +50,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var input6: UIButton!
     @IBOutlet weak var scoreCounter: UILabel!
     
+    func generateSentences() {
+        sentences.append([["What", "A", "Wonderful", "Morning", "Hello", "George"], ["What A Wonderful Morning"]])
+        sentences.append([["Excellent", "Chocolate", "Chip", "Cookies", "Look", "Boots"], ["Excellent Chocolate Chip Cookies"]])
+        sentences.append([["Confident", "Claire", "Sings", "Songs", "Tea", "ToHellWithGeorgia"], ["Confident Claire Sings Songs"]])
+        sentences.append([["Brave", "Horses", "Run", "Quickly", "Oil", "Pride"], ["Brave Horses Run Quickly"]])
+        sentences.append([["Intelligent", "Robots", "Play", "Soccer", "Chocolate", "Mud"], ["Intelligent Robots Play Soccer"]])
+        sentences.append([["Fast", "Runners", "Are", "Victorious", "Above", "Eyebrows"], ["Fast Runners Are Victorious"]])
+        sentences.append([["Courageous", "Firefighters", "Save", "People", "Below", "Banana"], ["Courageous Firefighters Save People"]])
+    }
+    
+    func shuffleSentences() {
+        sentences.shuffleInPlace()
+    }
+    
     //Set up view
     func setup() {
-        input1.titleLabel?.adjustsFontSizeToFitWidth = true
-        input2.titleLabel?.adjustsFontSizeToFitWidth = true
-        input3.titleLabel?.adjustsFontSizeToFitWidth = true
-        input4.titleLabel?.adjustsFontSizeToFitWidth = true
-        input5.titleLabel?.adjustsFontSizeToFitWidth = true
-        scoreCounter.adjustsFontSizeToFitWidth = true
-        scoreCounter.text = "Score: \(score)"
+        sentences[sentenceCounter][0].shuffleInPlace()
+        input1.setTitle(sentences[sentenceCounter][0][0], forState: UIControlState.Normal)
+        input2.setTitle(sentences[sentenceCounter][0][1], forState: UIControlState.Normal)
+        input3.setTitle(sentences[sentenceCounter][0][2], forState: UIControlState.Normal)
+        input4.setTitle(sentences[sentenceCounter][0][3], forState: UIControlState.Normal)
+        input5.setTitle(sentences[sentenceCounter][0][4], forState: UIControlState.Normal)
+        input6.setTitle(sentences[sentenceCounter][0][5], forState: UIControlState.Normal)
     }
     
     //Reset view
@@ -102,13 +125,16 @@ class ViewController: UIViewController {
     func evaluateResult() {
         let userAnswer = display1.currentTitle! + " " + display2.currentTitle! + " "
             + display3.currentTitle! + " " + display4.currentTitle!
-        if userAnswer == sentences[1][0] {
+        if userAnswer == sentences[sentenceCounter][1][0] {
             score += 1
             scoreCounter.text = "Score: \(score)"
-            reset()
+            sentenceCounter += 1
+            if sentenceCounter != sentences.count {
+                reset()
+                setup()
+            }
         } else {
             reset()
         }
     }
 }
-

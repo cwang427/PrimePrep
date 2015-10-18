@@ -14,6 +14,7 @@
 		C310838E1BD327C200F847AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C310838C1BD327C200F847AA /* LaunchScreen.storyboard */; };
 		C31083991BD327C200F847AA /* PrimePrepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31083981BD327C200F847AA /* PrimePrepTests.swift */; };
 		C31083A41BD327C200F847AA /* PrimePrepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31083A31BD327C200F847AA /* PrimePrepUITests.swift */; };
+		C377BAC71BD39BAD0006B6EA /* Shuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C377BAC61BD39BAD0006B6EA /* Shuffler.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C310839F1BD327C200F847AA /* PrimePrepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimePrepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C31083A31BD327C200F847AA /* PrimePrepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimePrepUITests.swift; sourceTree = "<group>"; };
 		C31083A51BD327C200F847AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C377BAC61BD39BAD0006B6EA /* Shuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		C31083821BD327C200F847AA /* PrimePrep */ = {
 			isa = PBXGroup;
 			children = (
+				C377BAC61BD39BAD0006B6EA /* Shuffler.swift */,
 				C31083831BD327C200F847AA /* AppDelegate.swift */,
 				C31083851BD327C200F847AA /* ViewController.swift */,
 				C31083871BD327C200F847AA /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				C31083861BD327C200F847AA /* ViewController.swift in Sources */,
 				C31083841BD327C200F847AA /* AppDelegate.swift in Sources */,
+				C377BAC71BD39BAD0006B6EA /* Shuffler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
