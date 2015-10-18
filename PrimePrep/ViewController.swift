@@ -19,7 +19,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func addWord(sender: UIButton) {
+        if (display1.currentTitle! == " ") {
+            display1.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+        } else if display2.currentTitle! == " " {
+            display2.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+        } else if display3.currentTitle! == " " {
+            display3.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+        } else if display4.currentTitle! == " " {
+            display4.setTitle(sender.currentTitle!, forState: UIControlState.Normal)
+        }
+    }
+    
+    @IBOutlet weak var display1: UIButton!
+    @IBOutlet weak var display2: UIButton!
+    @IBOutlet weak var display3: UIButton!
+    @IBOutlet weak var display4: UIButton!
 
-
+    @IBAction func clearDisplay(sender: UIButton) {
+        sender.setTitle(" ", forState: UIControlState.Normal)
+    }
+    
 }
 

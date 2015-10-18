@@ -192,6 +192,7 @@
 				TargetAttributes = {
 					C310837F1BD327C200F847AA = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7H6UJAR6U8;
 					};
 					C31083931BD327C200F847AA = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -398,10 +399,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PrimePrep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.PrimePrep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -409,10 +413,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PrimePrep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.PrimePrep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -483,6 +490,7 @@
 				C31083AA1BD327C200F847AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C31083AB1BD327C200F847AA /* Build configuration list for PBXNativeTarget "PrimePrepTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +499,7 @@
 				C31083AD1BD327C200F847AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C31083AE1BD327C200F847AA /* Build configuration list for PBXNativeTarget "PrimePrepUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				C31083B01BD327C200F847AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
